@@ -16,6 +16,7 @@ const TokenizerInput: React.FC<TTokenizerInputProps> = ({
     (text: string) => {
       setIsProcessing(true);
       try {
+        // Now both methods are synchronous with js-tiktoken
         const result = processTokenization(text, method);
         onTokenize(result);
       } catch (error) {
