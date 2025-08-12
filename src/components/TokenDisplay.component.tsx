@@ -86,6 +86,11 @@ const TokenDisplay: React.FC<TTokenDisplayProps> = ({ tokens, className = "" }) 
         </div>
       </div>
 
+      {/* Live region for screen readers */}
+      <div aria-live='polite' aria-atomic='true' className='sr-only'>
+        {tokens.length > 0 ? `${tokens.length} tokens generated` : "No tokens to display"}
+      </div>
+
       {/* Token Grid */}
       <div
         className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3'
